@@ -2,8 +2,8 @@
 
 Description
 -----------
-Low level design for creation of different types of pen
-Code has been written in JAVA
+1) Low level design for creation of different types of pen
+2) Code has been written in JAVA
 
 Requirements
 -------------
