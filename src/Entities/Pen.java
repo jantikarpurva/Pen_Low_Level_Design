@@ -1,5 +1,6 @@
 package Entities;
 
+import Factories.PenFactory;
 import Interfaces.Write;
 import Strategies.IsWorkingStrategy;
 import Strategies.RefillStrategy;
@@ -11,18 +12,18 @@ public abstract class Pen implements Write{
     private String color;
     private String size;
     private String name;
-    private final IsWorkingStrategy isWorkingStrategy; // Every pen should have a isWorkingStrategy, and it can be any
-    private final RefillStrategy refillStrategy; // Every pen should have a refillStrategy and you dont have to know which one is coming in
+    private IsWorkingStrategy isWorkingStrategy; // Every pen should have a isWorkingStrategy, and it can be any
+    private RefillStrategy refillStrategy; // Every pen should have a refillStrategy and you dont have to know which one is coming in
 
     // Constructor
-    public Pen(String type, String color, String size, String name, IsWorkingStrategy isWorkingStrategy, RefillStrategy refillStrategy){
-        this.type = type;
-        this.color = color;
-        this.size = size;
-        this.name = name;
-        this.isWorkingStrategy = isWorkingStrategy;
-        this.refillStrategy = refillStrategy;
-    }
+//    public Pen(String type, String color, String size, String name, IsWorkingStrategy isWorkingStrategy, RefillStrategy refillStrategy){
+//        this.type = type;
+//        this.color = color;
+//        this.size = size;
+//        this.name = name;
+//        this.isWorkingStrategy = isWorkingStrategy;
+//        this.refillStrategy = refillStrategy;
+//    }
 
     public void printCreatedObject(){
         System.out.println("You created a "+getType());
@@ -69,5 +70,21 @@ public abstract class Pen implements Write{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public IsWorkingStrategy getIsWorkingStrategy() {
+        return isWorkingStrategy;
+    }
+
+    public RefillStrategy getRefillStrategy() {
+        return refillStrategy;
+    }
+
+    public void setIsWorkingStrategy(IsWorkingStrategy isWorkingStrategy){
+        this.isWorkingStrategy = isWorkingStrategy;
+    }
+
+    public void setRefillStrategy(RefillStrategy refillStrategy){
+        this.refillStrategy = refillStrategy;
     }
 }
